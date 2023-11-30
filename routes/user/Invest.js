@@ -23,6 +23,14 @@ router.post("/", UserAuth, async (req, res) => {
       // Update user balance
       await User.findByIdAndUpdate(user._id, { balance: userNewBalance });
 
+      //update user invested.
+      const invested = parseInt(user.invested);
+      const newInvestedBalance = invested + amt;
+
+      await User.findByIdAndUpdate(user._id, {
+         invested: newInvestedBalance,
+      });
+
       // Record the investment
       const investment = new Investment({
          user: user.username,

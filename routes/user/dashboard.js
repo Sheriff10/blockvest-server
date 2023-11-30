@@ -10,8 +10,10 @@ router.get("/", [UserAuth], async (req, res) => {
    const balance = user.balance;
    const withdrawal = user.withdrawal;
    const invested = user.invested;
+   const username = user.username;
+   const email = user.email;
 
-   const stats = { deposit, balance, withdrawal, invested };
+   const stats = { deposit, balance, withdrawal, invested, username, email };
 
    res.status(200).send({ message: "Success", stats });
 });
