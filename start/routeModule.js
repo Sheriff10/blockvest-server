@@ -7,6 +7,7 @@ const deposit = require("../routes/user/deposit");
 const getDeposit = require("../routes/user/getDeposits");
 // admin
 const adminDeposit = require("../routes/admin/allDeposit");
+const updateDeposit = require("../routes/admin/updateDeposit");
 
 const routesModule = (app) => {
    app.use("/user/signup", signup);
@@ -20,6 +21,7 @@ const routesModule = (app) => {
 
    // Admin route modules
    app.use("/admin/get-deposit", adminDeposit);
+   app.use("/admin/update-deposit", updateDeposit);
 
 };
 
