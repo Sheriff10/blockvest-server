@@ -5,7 +5,7 @@ const User = require("../../model/user");
 
 const router = express.Router();
 
-router.post("/", UserAuth, async (req, res) => {
+router.post("/", async (req, res) => {
    const { _id, status, username, amount } = req.body;
 
    const isIdValid = await Deposit.findById(_id);
@@ -17,7 +17,7 @@ router.post("/", UserAuth, async (req, res) => {
       case "confirmed":
          if (isIdValid.status === "confirmed")
             return res.send(200).send({ message: "Deposit already confirmed" });
-            
+
          const user = await User.findOne({ username });
          if (!user) return res.send(404).send({ error: "User not found" });
 

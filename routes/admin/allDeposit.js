@@ -4,7 +4,7 @@ const Deposit = require("../../model/deposit");
 
 const router = express.Router();
 
-router.get("/", UserAuth, async (req, res) => {
+router.get("/", async (req, res) => {
    const user = req.user;
    const deposits = await Deposit.find();
 
