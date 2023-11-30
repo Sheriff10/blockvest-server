@@ -4,7 +4,7 @@ const signin = require("../routes/signin");
 const dashboard = require("../routes/user/dashboard");
 const withdrawal = require("../routes/user/withdrawal");
 const deposit = require("../routes/user/deposit");
-const investment = require("../routes/user/invest");
+const investment = require("../routes/user/Invest");
 const getDeposit = require("../routes/user/getDeposits");
 const getInvestment = require("../routes/user/getInvestments");
 // admin
