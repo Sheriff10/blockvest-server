@@ -5,6 +5,8 @@ const dashboard = require("../routes/user/dashboard");
 const withdrawal = require("../routes/user/withdrawal");
 const deposit = require("../routes/user/deposit");
 const getDeposit = require("../routes/user/getDeposits");
+// admin
+const adminDeposit = require("../routes/admin/allDeposit");
 
 const routesModule = (app) => {
    app.use("/user/signup", signup);
@@ -15,6 +17,9 @@ const routesModule = (app) => {
    app.use("/user/witdrawal", withdrawal);
    app.use("/user/deposit", deposit);
    app.use("/user/get-deposit", getDeposit);
+
+   // Admin route modules
+   app.use("/admin/get-deposit", adminDeposit);
 
 };
 
