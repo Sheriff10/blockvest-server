@@ -9,7 +9,6 @@ router.post("/", async (req, res) => {
    const { password, username } = req.body;
 
    // Check if Username Exists
-   console.log(password, username)
    const isUsernameValid = await User.findOne({ username });
    if (!isUsernameValid)
       return res.status(404).send({ error: "Username Not found" });

@@ -9,7 +9,6 @@ router.post("/", UserAuth, async (req, res) => {
    const user = req.user;
 
    const findHash = await Deposit.findOne({ hash });
-   console.log(findHash)
    if (findHash) return res.status(400).send({ error: "Hash exist" });
    const deposit = new Deposit({
       user: user.username,
